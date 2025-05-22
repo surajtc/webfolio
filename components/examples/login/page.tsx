@@ -1,10 +1,10 @@
-import { Mail, Eye, Facebook, Github, Apple } from "lucide-react";
+import { Mail, Eye, Facebook, Apple } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent } from "@/components/ui/card";
 
-export default function LoginPage() {
+export default function Page() {
   return (
     <div className="flex min-h-screen">
       {/* Left column - form */}

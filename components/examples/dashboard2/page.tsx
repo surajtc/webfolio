@@ -15,7 +15,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 
-export default function DashboardPage() {
+export default function Page() {
   const navItems = [
     { label: "Orders", icon: Home },
     { label: "Wish List", icon: Heart },
