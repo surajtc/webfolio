@@ -29,14 +29,11 @@ export function ChatOptions() {
             { label: "Writing style", options: ["Concise", "Detailed"] },
             { label: "Mode", options: ["Chatbot", "Assistant"] },
           ].map(({ label, options }) => (
-            <div
-              key={label}
-              className="flex items-center justify-between gap-2"
-            >
+            <div key={label} className="grid grid-cols-2 gap-4 min-w-[240px]">
               <span className="text-sm font-medium text-muted-foreground mb-1">
                 {label}
               </span>
-              <Select>
+              <Select defaultValue={options[0]}>
                 <SelectTrigger size="sm">
                   <SelectValue placeholder={`Select ${label.toLowerCase()}`} />
                 </SelectTrigger>

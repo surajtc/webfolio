@@ -23,8 +23,6 @@ export default async function Page({
   const entry = PageRegistry[slug];
   if (!entry) return notFound();
 
-  const { component: Component, meta } = entry;
-
   let files: FileEntry[];
 
   try {
@@ -39,7 +37,6 @@ export default async function Page({
     notFound();
   }
 
-  console.log(`[page/${slug}] files:`, files, meta);
   const highlighted = files.map(({ path, content }) => ({
     path,
     codeHtml: highlight(content),
@@ -47,11 +44,7 @@ export default async function Page({
 
   return (
     <DemoContainer files={highlighted}>
-      <iframe
-        src={`/demo/${slug}`}
-        title={slug}
-        className="h-full w-full border border-red-400"
-      />
+      <iframe src={`/demo/${slug}`} title={slug} className="h-full w-full" />
     </DemoContainer>
   );
 }

@@ -14,9 +14,9 @@ export function ThemeToggle() {
 
   return (
     <Button
-      variant="ghost"
+      variant="secondary"
       size="icon"
-      className="relative rounded-full"
+      className="relative rounded-full size-[34px]"
       onClick={toggleTheme}
       aria-label="Toggle theme"
     >

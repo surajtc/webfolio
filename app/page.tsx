@@ -1,13 +1,12 @@
 import { Container } from "@/components/container";
 import { ThemeToggle } from "@/components/theme-toggle";
-import { Button } from "@/components/ui/button";
+import { Button, buttonVariants } from "@/components/ui/button";
 import { PageRegistry } from "@/lib/registry";
+import { ArrowUpRightIcon, StarIcon, StarsIcon } from "lucide-react";
 import Link from "next/link";
 
 export default function Page() {
   const keys = Object.keys(PageRegistry);
-
-  console.log(`[page] keys:`, keys);
 
   return (
     <main className="bg-sidebar">
@@ -15,19 +14,19 @@ export default function Page() {
 
       <Container>
         <nav className="space-y-6">
-          <div className="flex justify-between">
-            <h3 className="text-4xl font-semibold tracking-tight">Web Sauce</h3>
-            <div className="flex items-center gap-2">
-              <Button size="sm" variant="secondary">
-                Github
-              </Button>
-              <ThemeToggle />
-            </div>
+          <div className="flex justify-between items-center">
+            <h3 className="text-3xl font-semibold tracking-tight">Webfolio</h3>
+            <Button
+              variant="secondary"
+              className="rounded-full cursor-pointer has-[>svg]:px-4"
+            >
+              Github
+              <ArrowUpRightIcon className="" />
+            </Button>
           </div>
           <p className="text-muted-foreground">
-            Floating UI provides a toolkit of positioning features that let you
-            robustly anchor an absolutely-positioned floating element next to a
-            given reference element.
+            An open-source collection of web page implementations and UI
+            experiments
           </p>
         </nav>
       </Container>
@@ -37,24 +36,30 @@ export default function Page() {
             <div>
               <Link
                 href={`/view/${key}`}
-                className="block w-full aspect-video border rounded overflow-hidden"
+                className="block w-full aspect-video border rounded-lg overflow-hidden hover:border-input"
               >
                 <img
-                  src="/images/preview-light.png"
-                  alt="Dashboard"
+                  src={`/images/${key}.png`}
+                  alt={key}
                   className="w-full h-full object-cover dark:hidden"
                 />
                 <img
-                  src="/images/preview-dark.png"
-                  alt="Dashboard"
+                  src={`/images/${key}-dark.png`}
+                  alt={key}
                   className=" w-full h-full object-cover hidden dark:block"
                 />
               </Link>
             </div>
-            <div className="flex items-center justify-between pt-4 px-2">
-              <h3 className="text-xl font-medium capitalize">{key}</h3>
+            <div className="flex items-center justify-between pt-2 px-2">
+              <h3 className="font-medium capitalize">{key}</h3>
               <div>
-                <p>Demo</p>
+                <Link
+                  href={`/view/${key}`}
+                  className={buttonVariants({ variant: "link", size: "sm" })}
+                >
+                  View
+                  <ArrowUpRightIcon className="" />
+                </Link>
               </div>
             </div>
           </Container>
@@ -65,7 +70,7 @@ export default function Page() {
         <div
           className="
             absolute
-            -bottom-14
+            -bottom-8
             left-1/2
             -translate-x-1/2
     overflow-hidden
@@ -74,8 +79,8 @@ export default function Page() {
     [mask-size:100%_100%]
   "
         >
-          <p className="text-center text-[13rem] font-bold tracking-tighter leading-none font-outline text-transparent text-border_">
-            sauce
+          <p className="text-center text-[8rem] font-bold tracking-tighter leading-none font-outline text-transparent text-border_">
+            webfolio
           </p>
         </div>
       </Container>

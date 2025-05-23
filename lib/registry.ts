@@ -1,6 +1,3 @@
-// lib/pageRegistry.ts
-/// <reference types="webpack-env" />
-
 import type { FC } from "react";
 
 // — your optional per-page metadata shape

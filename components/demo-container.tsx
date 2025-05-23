@@ -12,18 +12,24 @@ export function DemoContainer({
 }) {
   return (
     <main className="h-screen overflow-hidden bg-sidebar">
-      <Tabs defaultValue="preview" className="h-full p-2">
-        <div className="flex items-center justify-between">
-          <Link href="/">Web Blocks</Link>
+      <Tabs defaultValue="preview" className="h-full py-2 px-4">
+        <div className="flex items-center justify-between pl-1 py-1">
+          <Link href="/" className="text-xl font-semibold tracking-tight">
+            Webfolio
+          </Link>
           <div className="flex items-center gap-2">
-            <TabsList className="">
-              <TabsTrigger value="preview">Preview</TabsTrigger>
-              <TabsTrigger value="code">Code</TabsTrigger>
+            <TabsList className="rounded-full !h-auto">
+              <TabsTrigger value="preview" className="rounded-full">
+                Preview
+              </TabsTrigger>
+              <TabsTrigger value="code" className="rounded-full">
+                Code
+              </TabsTrigger>
             </TabsList>
             <ThemeToggle />
           </div>
         </div>
-        <div className="border rounded flex-1 bg-background">
+        <div className="border border-input rounded-xl overflow-hidden flex-1 bg-background">
           <TabsContent value="preview" className="h-full">
             {children}
           </TabsContent>
