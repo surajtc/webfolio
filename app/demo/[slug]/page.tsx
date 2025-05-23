@@ -1,11 +1,8 @@
-import { DemoContainer } from "@/components/demo-container";
-import { FilePreview } from "@/components/file-preview";
 import type { FileEntry } from "@/lib/file-utils";
 import { getAppFileEntries } from "@/lib/file-utils";
 import type { PageKey } from "@/lib/registry";
 import { PageRegistry } from "@/lib/registry";
 import { notFound } from "next/navigation";
-import { highlight } from "sugar-high";
 
 export function generateStaticParams() {
   const keys = Object.keys(PageRegistry);
@@ -39,19 +36,5 @@ export default async function Page({
     notFound();
   }
 
-  console.log(`[page/${slug}] files:`, files, meta);
-  const highlighted = files.map(({ path, content }) => ({
-    path,
-    codeHtml: highlight(content),
-  }));
-
-  return (
-    <DemoContainer files={highlighted}>
-      <iframe
-        src={`/demo/${slug}`}
-        title={slug}
-        className="h-full w-full border border-red-400"
-      />
-    </DemoContainer>
-  );
+  return <Component />;
 }

@@ -24,7 +24,9 @@ export function DemoContainer({
           </div>
         </div>
         <div className="border rounded flex-1 bg-background">
-          <TabsContent value="preview">{children}</TabsContent>
+          <TabsContent value="preview" className="h-full">
+            {children}
+          </TabsContent>
 
           <TabsContent value="code" className="h-full">
             <FilePreview files={files} />

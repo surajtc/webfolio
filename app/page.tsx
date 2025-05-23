@@ -16,9 +16,7 @@ export default function Page() {
       <Container>
         <nav className="space-y-6">
           <div className="flex justify-between">
-            <h3 className="text-4xl font-semibold tracking-tight">
-              Web Blocks
-            </h3>
+            <h3 className="text-4xl font-semibold tracking-tight">Web Sauce</h3>
             <div className="flex items-center gap-2">
               <Button size="sm" variant="secondary">
                 Github
@@ -77,7 +75,7 @@ export default function Page() {
   "
         >
           <p className="text-center text-[13rem] font-bold tracking-tighter leading-none font-outline text-transparent text-border_">
-            blocks
+            sauce
           </p>
         </div>
       </Container>
