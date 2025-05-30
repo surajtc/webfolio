@@ -1,11 +1,5 @@
-components/demo/[slug]
-|_ index.tsx
-|\_ data.json
-|\_ preview.png
+TODO:
 
-app/demo/[slug]
-
-
-1. iframe
-2. static image
-3. toolbar/layout
+- [ ] Make it responsive
+- [ ] Update each component to follow a design system and coding style
+- [ ] Fix styling of demo components

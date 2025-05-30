@@ -1,12 +1,14 @@
 import { Container } from "@/components/container";
-import { ThemeToggle } from "@/components/theme-toggle";
 import { Button, buttonVariants } from "@/components/ui/button";
 import { PageRegistry } from "@/lib/registry";
-import { ArrowUpRightIcon, StarIcon, StarsIcon } from "lucide-react";
+import { ArrowUpRightIcon } from "lucide-react";
 import Link from "next/link";
 
 export default function Page() {
-  const keys = Object.keys(PageRegistry);
+  const exclude = ["iso-cube", "stepper", "audio-visualizer"];
+  const keys = Object.keys(PageRegistry).filter(
+    (key) => !exclude.includes(key),
+  );
 
   return (
     <main className="bg-sidebar">

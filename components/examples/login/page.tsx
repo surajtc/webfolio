@@ -8,7 +8,7 @@ export default function Page() {
   return (
     <div className="flex min-h-screen">
       {/* Left column - form */}
-      <div className="w-full lg:w-1/2 flex items-center justify-center px-6 py-12 bg-white">
+      <div className="w-full lg:w-1/2 flex items-center justify-center px-6 py-12">
         <div className="w-full max-w-md space-y-8">
           {/* Logo */}
           <div className="flex items-center gap-2 text-xl font-semibold text-primary">
@@ -20,7 +20,7 @@ export default function Page() {
           <div>
             <h2 className="text-2xl font-semibold">Start your journey</h2>
             <p className="text-muted-foreground text-sm">
-              Sign Up to InsideBox
+              Get access to InsideBox
             </p>
           </div>
 
@@ -28,7 +28,7 @@ export default function Page() {
           <Card>
             <CardContent className="space-y-4 pt-6">
               <div className="space-y-2">
-                <Label htmlFor="email">E-mail</Label>
+                <Label htmlFor="email">Email</Label>
                 <div className="relative">
                   <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
                   <Input
@@ -47,7 +47,7 @@ export default function Page() {
                 </div>
               </div>
 
-              <Button className="w-full mt-4">Sign Up</Button>
+              <Button className="w-full mt-4">Sign up</Button>
             </CardContent>
           </Card>
 
@@ -72,7 +72,7 @@ export default function Page() {
           {/* Footer */}
           <div className="text-center text-sm text-muted-foreground">
             Have an account?
-            <a href="#" className="text-blue-500 underline hover:text-blue-600">
+            <a href="#" className="text-chart-1 underline">
               Sign in
             </a>
           </div>

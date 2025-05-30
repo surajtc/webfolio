@@ -76,6 +76,16 @@
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
+
+  --sh-identifier: var(--foreground);
+  --sh-keyword: oklch(0.528 0.19 30);
+  --sh-string: oklch(0.4 0.15 180);
+  --sh-class: oklch(0.36 0.2 270);
+  --sh-property: oklch(0.35 0.2 250);
+  --sh-entity: oklch(0.4 0.2 190);
+  --sh-jsxliterals: oklch(0.48 0.18 280);
+  --sh-sign: oklch(0.5 0.05 270);
+  --sh-comment: oklch(0.6 0.03 60);
 }
 
 .dark {
@@ -110,6 +120,16 @@
   --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.556 0 0);
+
+  --sh-identifier: var(--foreground);
+  --sh-keyword: oklch(0.705 0.24 30);
+  --sh-string: oklch(0.6 0.18 180);
+  --sh-class: oklch(0.65 0.25 260);
+  --sh-property: oklch(0.6 0.25 250);
+  --sh-entity: oklch(0.65 0.2 190);
+  --sh-jsxliterals: oklch(0.7 0.18 280);
+  --sh-sign: oklch(0.7 0.05 270);
+  --sh-comment: oklch(0.45 0.05 60);
 }
 
 @layer base {
@@ -122,52 +142,39 @@
   .font-outline {
     -webkit-text-stroke: 1px var(--ring);
   }
-}
 
-:root {
-  --sh-identifier: #354150;
-  --sh-keyword: #f47067;
-  --sh-string: #00a99a;
-  --sh-class: #2d5e9d;
-  --sh-property: #0550ae;
-  --sh-entity: #249a97;
-  --sh-jsxliterals: #6266d1;
-  --sh-sign: #8996a3;
-  --sh-comment: #a19595;
-}
+  .sh-identifier {
+    color: var(--sh-identifier);
+  }
+  .sh-keyword {
+    color: var(--sh-keyword);
+  }
+  .sh-string {
+    color: var(--sh-string);
+  }
+  .sh-class {
+    color: var(--sh-class);
+  }
+  .sh-property {
+    color: var(--sh-property);
+  }
+  .sh-entity {
+    color: var(--sh-entity);
+  }
+  .sh-jsxliterals {
+    color: var(--sh-jsxliterals);
+  }
+  .sh-sign {
+    color: var(--sh-sign);
+  }
+  .sh-comment {
+    color: var(--sh-comment);
+  }
 
-/* sugar-high outputs <span class="sh-xxx">…</span> */
-.sh-identifier {
-  color: var(--sh-identifier);
-}
-.sh-keyword {
-  color: var(--sh-keyword);
-}
-.sh-string {
-  color: var(--sh-string);
-}
-.sh-class {
-  color: var(--sh-class);
-}
-.sh-property {
-  color: var(--sh-property);
-}
-.sh-entity {
-  color: var(--sh-entity);
-}
-.sh-jsxliterals {
-  color: var(--sh-jsxliterals);
-}
-.sh-sign {
-  color: var(--sh-sign);
-}
-.sh-comment {
-  color: var(--sh-comment);
-}
-
-.sh-code {
-  font-family: monospace;
-  font-size: 0.9rem;
-  line-height: 1.4;
-  white-space: pre-wrap;
+  .sh-code {
+    font-family: monospace;
+    font-size: 0.9rem;
+    line-height: 1.4;
+    white-space: pre-wrap;
+  }
 }

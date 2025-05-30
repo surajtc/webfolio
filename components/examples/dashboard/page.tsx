@@ -9,47 +9,44 @@ import {
   Percent,
   Eye,
   LogOut,
-  User,
 } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
+import { cn } from "@/lib/utils";
 
 export default function Page() {
   const navItems = [
     { label: "Orders", icon: Home },
     { label: "Wish List", icon: Heart },
-    { label: "Download", icon: Download },
     { label: "Cart", icon: ShoppingCart },
-    { label: "Related Products", icon: Gift },
-    { label: "Contact Form", icon: MessageSquare },
-    { label: "Recent Product", icon: Star },
-    { label: "Reward Points", icon: Percent },
-    { label: "Sale Products", icon: Percent },
-    { label: "Best Selling Product", icon: Star },
-    { label: "Specific Product", icon: Star },
+    { label: "Offers", icon: Gift },
+    { label: "Saved", icon: Star },
+    { label: "Rewards", icon: Percent },
+    { label: "Support", icon: MessageSquare },
+    { label: "Download", icon: Download },
   ];
 
   const stats = [
     {
       label: "Orders",
       value: 4,
-      color: "bg-red-500",
+      color: "bg-chart-2",
     },
     {
       label: "Rewards Points",
       value: 0,
-      color: "bg-purple-500",
+      color: "bg-chart-3",
     },
     {
       label: "WishList",
       value: 0,
-      color: "bg-green-500",
+      color: "bg-chart-4",
     },
     {
       label: "Downloads",
       value: 1,
-      color: "bg-blue-500",
+      color: "bg-chart-5",
     },
   ];
 
@@ -85,7 +82,7 @@ export default function Page() {
       {/* Sidebar */}
       <aside className="w-64 border-r bg-muted p-4 flex flex-col">
         <div className="flex flex-col items-center gap-2 mb-8">
-          <div className="w-24 h-24 bg-slate-300 rounded-full" />
+          <div className="w-24 h-24 bg-chart-1 rounded-full" />
           <div className="text-center text-sm">
             <div className="font-medium">Demo</div>
             <div className="text-muted-foreground">demo@gmail.com</div>
@@ -118,12 +115,12 @@ export default function Page() {
           {stats.map((stat) => (
             <Card
               key={stat.label}
-              className="cursor-pointer hover:shadow-md transition"
+              className={cn(
+                "cursor-pointer hover:shadow-md transition",
+                stat.color,
+              )}
             >
-              <CardContent
-                className="p-4 text-white"
-                style={{ backgroundColor: stat.color }}
-              >
+              <CardContent className="p-4">
                 <div className="text-lg font-semibold">{stat.label}</div>
                 <div className="text-3xl font-bold">{stat.value}</div>
                 <div className="mt-2 text-sm underline">View More</div>
